@@ -1,0 +1,56 @@
+
+body {
+	background-image: linear-gradient(to bottom, white, green);
+	margin-bottom: 0;
+}
+
+i {
+	margin: 5em 0 0 0 ;
+	width: 5em;
+	height: 5em;
+	/*background-color: grey;*/
+	
+	border-radius: 50%;
+}
+
+#div {
+	margin: auto;
+	width: 200px;
+	height: 200px;
+	margin-bottom: -100px;
+}
+
+#div img {
+	border-radius: 50%;
+	height: 100%;
+	width: 100%;
+}
+
+section {
+	background-color: white;
+	position: absolute;
+	width: 500px;
+	height: 500px;
+	top: 50%;
+	left: 50%;
+	margin-left: -250px;
+	margin-top: -250px;
+}
+
+aside {
+	margin: 6em 0 0 0;
+	text-align: center;
+}
+
+ul {
+	list-style: none;
+}
+
+ul li {
+	display: inline-block;
+}
+
+footer {
+	text-align: center;
+	width: 100%;
+}
