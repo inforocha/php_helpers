@@ -3,9 +3,9 @@
 class DateHelper {
 	/**
 	* [en]
-	* adds a number of days to the informed date.
+	* checks the number of days between two dates.
 	* [pt-br]
-	* soma uma quantidade de dias a data informada.
+	* verifica a quantidade de dias entre duas datas.
 	* @param string $date1 - format Y-m-d or seconds
 	* @param string $date2 - format Y-m-d or seconds
 	* @param boolean $isStrToTime
