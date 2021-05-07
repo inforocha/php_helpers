@@ -42,4 +42,32 @@ class DateHelper {
 	public static function addDaysInDate($days, $date) {
 		return date('Y-m-d', strtotime('+'.$days.' days', strtotime($date)));
 	}
+
+	/**
+	* [en] Checks whether a date is valid
+	* [pt-BR] Verifica se uma data eh valida
+	* @param string $dt - data
+	* @param string $format [opcional] - formato da data. aceitos: 'YYYY-mm-dd HH:ii:ss','YYYY-mm-dd','dd/mm/YYYY'
+	* @return boollean
+	* example
+	* 	DateHelper::isValidDateString('1982-11-25'); // true
+	* 	DateHelper::isValidDateString('1982-11-25 00:00:00', 'YYYY-mm-dd HH:ii:ss'); // true
+	* 	DateHelper::isValidDateString('25/11/1982','dd/mm/YYYY'); // true
+	*/
+	public static function isValidDateString($dt, $format = 'YYYY-mm-dd') {
+		if(empty($dt)) return false;
+		if($format == 'YYYY-mm-dd HH:ii:ss') {
+			$partes = explode(' ',$partes); // separando data de hora
+			$partes = explode('-',$dt[0]); // separando ano, mes, dia
+			list($ano, $mes, $dia) = $partes;
+		} elseif($format == 'YYYY-mm-dd') {
+			$partes = explode('-',$dt); // separando ano, mes, dia
+			list($ano, $mes, $dia) = $partes;
+		} elseif($format == 'dd/mm/YYYY') {
+			$partes = explode('/',$dt); // separando ano, mes, dia
+			list($dia, $mes, $ano) = $partes;
+		}
+
+		return checkdate($mes, $dia, $ano);
+	}
 }
